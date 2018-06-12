@@ -7,7 +7,8 @@
 */
  $font_path: '../fonts/OpenSans/';
  /* 
- *@font-url('font name', 'font extention'); 
+ *@short-font-url('font name', 'font extention');
+ *This will build the short url to your fonts
  */
  @function short-font-url($font_name, $ext)
  {
@@ -15,7 +16,7 @@
  }
  
  /* 
- * font-url('Interface', 'woff', '.', '?#iefix'); 
+ * font-url('OpenSans', 'woff', '.', '?#iefix'); 
  * @font_url returns Fontname, extention  and the Hash
  */
  @function font-url($font_name, $ext, $format, $hash: '')
