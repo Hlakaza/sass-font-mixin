@@ -1,0 +1,55 @@
+/*
+* Font Mixin
+*/
+/**
+* Base path to your fonts folder
+* Alter this according to the path your fonts are in.
+*/
+ $font_path: '../fonts/OpenSans/';
+ /* 
+ *@font-url('font name', 'font extention'); 
+ */
+ @function short-font-url($font_name, $ext)
+ {
+     @return url($font_path + $font_name + '.' + $ext);
+ }
+ 
+ /* 
+ * font-url('Interface', 'woff', '.', '?#iefix'); 
+ * @font_url returns Fontname, extention  and the Hash
+ */
+ @function font-url($font_name, $ext, $format, $hash: '')
+ {
+     @return url($font_path + $font_name + '.' + $ext + $hash) format($format);
+ }
+ 
+ /**
+ * set-font('font_name')
+ * @font_name: name of the font you have used
+ * Example: set-font('OpenSans')
+ * mixin will get the name used and build the fontface below
+ */
+ @mixin set-font($font_name)
+ {
+     @font-face {
+         font-family: $font_name;
+         font-style: normal;
+         font-weight: normal;
+         src: short-font-url($font_name, 'eot');
+         src: font-url($font_name, 'woff', 'embedded-opentype', '?#iefix'),
+              font-url($font_name, 'ttf', 'truetype'),
+              font-url($font_name, 'svg', 'esvg', '?#' + $font_name);
+     }
+ }
+ 
+/*
+* Get your font_name and build the style below .
+* Exapmle @font_name = OpenSans                                                       
+*/
+ @mixin use-set-font($font_name)
+ {
+     font-family: $font_name;
+     font-weight: normal;
+     letter-spacing: 0;
+ }
+ 
