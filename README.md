@@ -1,4 +1,4 @@
-# sass_font_mixin
+# sass font mixin
 A mixin for embeding fonts using sass
 
 How to use the font
