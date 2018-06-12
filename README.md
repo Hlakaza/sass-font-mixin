@@ -19,7 +19,7 @@ depending with the number of fonts you have this will be set like below;
 @include set-font('OpenSans');
 @include set-font('Roboto');
 `````````
-Compiled `set-font`` will look like below
+The above ``set-font('OpenSans')`` will build ``@font-face`` like below, and the rest accordingly
 ````````
 @font-face {
     font-family: "OpenSans";
